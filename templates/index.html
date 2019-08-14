@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <style>
+  body{
+	font-family: sans-serif;
+	background: #d5f0f3;
+}
+h1{
+	text-align: center;
+	/*ketebalan font*/
+	font-weight: 300;
+}
+.kotak_login{
+	width: 350px;
+	background: white;
+	/*meletakkan form ke tengah*/
+	margin: 80px auto;
+	padding: 30px 20px;
+}
+label{
+	font-size: 11pt;
+}
+.form_login{
+	/*membuat lebar form penuh*/
+	box-sizing : border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 11pt;
+	margin-bottom: 20px;
+}
+.tombol_login{
+	background: green;
+	color: black;
+	font-size: 11pt;
+	width: 100%;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+}
+</style>
+  <body>
+    <div class="kotak_login">
+      <h1>Please Login</h1>
+      <br>
+      <form action="" method="post">
+        <label><input type="text" placeholder="Username" class="form_login" name="username" value="{{
+          request.form.username }}">
+         <label><input type="password" placeholder="Password" class="form_login" name="password" value="{{
+          request.form.password }}">
+        <input type="submit" class="tombol_login" value="LOGIN">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
